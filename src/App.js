@@ -5,7 +5,9 @@ import Input from "./components/Input";
 import History from "./components/History";
 import Clear from "./components/Clear"; 
 
-import './App.css';
+import "./sytles.css";
+//import "./App.css";
+ 
 
 export default function App() {
   const [input, setInput] = useState(""); 
@@ -22,12 +24,12 @@ export default function App() {
           })}
         </div>
         <Input 
-          value={value}
+          value={input}
           onChange={(e) => setInput(e.target.value)}
           onClick={input ? handleSubmit : undefined}
         />
       </div>
-      <div className="column">
+      <div className="Column">
         <h3 className="Title">History</h3>
         <div className="Content">
           {history.map((el, i) => {
@@ -51,29 +53,3 @@ export default function App() {
   );
 }
 
-
-
-/*
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
-*/
